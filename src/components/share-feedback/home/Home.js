@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Header from '../../common/Header'
 import person1 from './person1.png'
 import person2 from './person2.png'
 import person3 from './person3.png'
@@ -11,10 +12,8 @@ import './Home.css'
 class Home extends Component {
   render() {
     return (
-      <div className="content">
-        <div className="main-header">
-          <h2 className="main-title">Share Feedback</h2>
-        </div>
+      <div className="share-feedback-home">
+        <Header>Share Feedback</Header>
         <ul className="people-list">
           <li>
             <img alt="person1.png" src={person1} />

@@ -1,4 +1,9 @@
 .title-wrapper {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.questions-title {
+  font-size: 31px;
 }

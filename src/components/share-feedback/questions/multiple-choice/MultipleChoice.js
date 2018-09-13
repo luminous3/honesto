@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-import Header from '../../../common/Header'
+import Title from '../../../common/Title'
 import './MultipleChoice.css'
 
 class MultipleChoice extends Component {
   render() {
     return (
       <div className="multiple-choice">
-        <Header>How well did I display courage?</Header>
+        <Title>How well did I display courage?</Title>
       </div>
     )
   }

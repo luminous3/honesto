@@ -13,6 +13,11 @@ header {
   cursor: default;
 }
 
+.title a {
+  text-decoration: none;
+  color: black;
+}
+
 .header-menu {
   display: flex;
   list-style: none;
@@ -26,6 +31,11 @@ header {
   font-weight: 500;
   white-space: nowrap;
   flex-grow: 1;
+}
+
+.header-menu li a {
+  text-decoration: none;
+  color: #031323;
 }
 
 .header-menu li:hover {

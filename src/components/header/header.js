@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 import avatar from './avatar.png'
 
 import './Header.css'
@@ -7,12 +9,23 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1 className="title">Honesto</h1>
+        <h1 className="title">
+          <Link to="/home">Honesto</Link>
+        </h1>
+
         <ul className="header-menu">
-          <li>Share Feedback</li>
-          <li>My Feedback</li>
-          <li>Team Feedback</li>
-          <li>Teams</li>
+          <li>
+            <Link to="/home">Share Feedback </Link>
+          </li>
+          <li>
+            <Link to="/feedback">My Feedback </Link>
+          </li>
+          <li>
+            <Link to="/home">Team Feedback </Link>
+          </li>
+          <li>
+            <Link to="/home">Teams</Link>
+          </li>
           <li className="cycle-wrapper">
             <span className="info">Next feedback cycle:</span>
             <span className="date">

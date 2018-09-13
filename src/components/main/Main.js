@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 
 import Home from '../share-feedback/home/Home'
 import MultipleChoice from '../share-feedback/questions/multiple-choice/MultipleChoice'
@@ -8,7 +9,8 @@ class Main extends Component {
   render() {
     return (
       <main>
-        <MultipleChoice />
+        <Route path="/home" component={Home} />
+        <Route path="/feedback" component={MultipleChoice} />
       </main>
     )
   }

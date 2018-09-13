@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { Button } from '../common/Button'
 
-import './Question.css'
+import './QuestionContainer.css'
 
 export default ({ children }) => {
   return (

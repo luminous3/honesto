@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
 import Home from '../home/Home'
-import MultipleChoice from '../questions/MultipleChoice'
+import Multiple from '../questions/Multiple'
 import Report from '../report/Report'
 import Text from '../questions/Text'
+import QuestionList from '../questions/QuestionList'
 
 import './Main.css'
 
@@ -15,7 +16,8 @@ class Main extends Component {
         <Route path="/home" component={Home} />
         <Route path="/text" component={Text} />
         <Route path="/feedback" component={Report} />
-        <Route path="/multiple-choice" component={MultipleChoice} />
+        <Route path="/multiple-choice" component={Multiple} />
+        <Route path="/questions/:userId/:questionId" component={QuestionList} />
       </main>
     )
   }

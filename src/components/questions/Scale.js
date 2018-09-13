@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Title from '../common/Title'
-import Question from './Question'
+import QuestionContainer from './QuestionContainer'
 import './Text.css'
 
 class Scale extends Component {
@@ -9,9 +9,9 @@ class Scale extends Component {
     return (
       <div className="text">
         <Title>How well does this person understand our business goals and roadmap?</Title>
-        <Question>
+        <QuestionContainer>
           <textarea placeholder="Say something" />
-        </Question>
+        </QuestionContainer>
       </div>
     )
   }

@@ -2,13 +2,15 @@ import { INCREASE, DECREASE } from '../actions'
 
 const initialState = {
   current: 0,
-  questions: [
+  list: [
     {
+      id: 1,
       value: 'How much do you trust this person to deliver high quality work?',
       type: 'scale',
       skip: false,
     },
     {
+      id: 2,
       value: 'Is this person up to date with the latest accounting regulations?',
       type: 'multiple',
       skip: false,
@@ -19,17 +21,20 @@ const initialState = {
       ],
     },
     {
+      id: 3,
       value: 'How well does this person understand the technical domain of our product?',
       type: 'scale',
       skip: false,
     },
     {
+      id: 4,
       value:
         'Have there been any situations where this person could have managed their emotions better? What happened?',
       type: 'text',
       skip: true,
     },
     {
+      id: 5,
       value: 'Does this person care about our users and treats customer support as a high priority?',
       type: 'multiple',
       skip: false,
@@ -40,12 +45,14 @@ const initialState = {
       ],
     },
     {
+      id: 6,
       value:
         'What would you like this person to work on the most during the next month, to enable their continued growth?',
       type: 'text',
       skip: false,
     },
     {
+      id: 7,
       value: "How transparent and clear are this person's plans and work tasks?",
       type: 'multiple',
       skip: false,
@@ -56,11 +63,13 @@ const initialState = {
       ],
     },
     {
+      id: 8,
       value: 'How well does this person understand our business goals and roadmap?',
       type: 'scale',
       skip: false,
     },
     {
+      id: 9,
       value: "Is there anything else you'd like to share with this person?",
       type: 'text',
       skip: true,

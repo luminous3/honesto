@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Title from '../common/Title'
-import Question from './Question'
+import QuestionContainer from './QuestionContainer'
 import './Text.css'
 
 class Text extends Component {
@@ -11,9 +11,9 @@ class Text extends Component {
         <Title>
           Have there been any situations where this person could have managed their emotions better? What happened?
         </Title>
-        <Question>
+        <QuestionContainer>
           <textarea placeholder="Say something" />
-        </Question>
+        </QuestionContainer>
       </div>
     )
   }

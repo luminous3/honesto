@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 import Title from '../common/Title'
-import Question from './Question'
-import './MultipleChoice.css'
+import QuestionContainer from './QuestionContainer'
+import './Multiple.css'
 
-class MultipleChoice extends Component {
+class Multiple extends Component {
   render() {
     return (
       <div className="multiple-choice">
         <Title>Is this person up to date with the latest accounting regulations?</Title>
-        <Question>
+        <QuestionContainer>
           <li>
             <span className="multi-low">No</span>
             <p>You should work on trying to stay more up to date with regulations.</p>
@@ -22,10 +22,10 @@ class MultipleChoice extends Component {
             <span className="multi-high">Yes</span>
             <p>Yes, you are the one I look up to when I need information about new regulations.</p>
           </li>
-        </Question>
+        </QuestionContainer>
       </div>
     )
   }
 }
 
-export default MultipleChoice
+export default Multiple

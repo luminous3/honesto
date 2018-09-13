@@ -6,6 +6,10 @@
   list-style: none;
 }
 
+.multiple-choice .selected {
+  background-color: #cdcdcd;
+}
+
 .multiple-choice li:hover {
   background-color: #cdcdcd;
   cursor: pointer;

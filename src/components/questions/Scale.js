@@ -53,12 +53,12 @@ class Scale extends Component {
   }
 
   render() {
-    const { question } = this.props
+    const { question, user } = this.props
 
     return (
       <div className="scale">
         <Title>{question.value}</Title>
-        <QuestionContainer>
+        <QuestionContainer page={question.id} user={user.id}>
           <p className="scale-content">{question.content}</p>
           <ul className="scale-list">{this.displayUnits()}</ul>
         </QuestionContainer>

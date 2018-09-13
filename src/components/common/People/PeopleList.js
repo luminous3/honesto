@@ -17,9 +17,9 @@ const PeopleList = ({ home, people }) => {
             {home && person.complete && <Button>View Submission</Button>}
             {home &&
               !person.complete && (
-                <FillButton>
-                  <Link to={`/questions/${person.id}/1`}>Fill Out</Link>
-                </FillButton>
+                <Link to={`/questions/${person.id}/1`}>
+                  <FillButton>Fill Out</FillButton>
+                </Link>
               )}
           </li>
         ))}

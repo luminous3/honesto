@@ -7,20 +7,42 @@ import QuestionContainer from './QuestionContainer'
 import './Multiple.css'
 
 class Multiple extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      selected: null,
+    }
+  }
+
+  updateSelected = (option, index) => {
+    this.setState({
+      selected: index,
+    })
+
+    this.props.update(option)
+  }
+
   displayOptions = options => {
     return options.map((option, index) => (
-      <li onClick={() => this.props.update(option)} key={`option${index}`}>
+      <li
+        className={index === this.state.selected ? 'selected' : ''}
+        onClick={() => this.updateSelected(option, index)}
+        key={`option${index}`}
+      >
         <p>{option}</p>
       </li>
     ))
   }
 
   render() {
-    const { question } = this.props
+    const { question, user } = this.props
     return (
       <div className="multiple-choice">
         <Title>{question.value}</Title>
-        <QuestionContainer>{this.displayOptions(question.options)}</QuestionContainer>
+        <QuestionContainer page={question.id} user={user.id}>
+          {this.displayOptions(question.options)}
+        </QuestionContainer>
       </div>
     )
   }

@@ -8,11 +8,11 @@ import './Text.css'
 
 class Text extends Component {
   render() {
-    const { question } = this.props
+    const { question, user } = this.props
     return (
       <div className="text">
         <Title>{question.value}</Title>
-        <QuestionContainer>
+        <QuestionContainer page={question.id} user={user.id}>
           <textarea onChange={e => this.props.update(e.target.value)} placeholder="Say something" />
         </QuestionContainer>
       </div>

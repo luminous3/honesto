@@ -5,34 +5,12 @@
   font-weight: 400;
 }
 
-h2 {
-  font-weight: 400;
-}
-
-.people-list {
-  list-style: none;
+.home-content {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   line-height: 26px;
+  list-style: none;
 }
 
-.people-list li {
-  height: 96px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(172, 177, 182, 0.33);
-}
-
-.people-list li:hover {
-  background-color: rgba(213, 176, 242, 0.1);
-}
-
-.people-list img {
-  margin: 0.5rem 1.5rem 0.5rem 1.5rem;
-}
-
-.person-name {
-  color: #59636e;
-  font-size: 22px;
-  text-align: left;
-  flex-grow: 1;
+h2 {
+  font-weight: 400;
 }

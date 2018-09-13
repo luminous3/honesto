@@ -8,36 +8,41 @@ import person5 from './images/person5.png'
 
 const initialState = {
   current: 0,
-  people: [
+  list: [
     {
       id: 1,
       name: 'Chris Johnson',
       avatar: person1,
       feedback: [],
+      complete: false,
     },
     {
       id: 2,
       name: 'Nico Perez',
       avatar: person2,
       feedback: [],
+      complete: false,
     },
     {
       id: 3,
       name: 'Nathaniel Moon',
       avatar: person3,
       feedback: [],
+      complete: false,
     },
     {
       id: 4,
       name: 'Denis Denison',
       avatar: person4,
       feedback: [],
+      complete: true,
     },
     {
       id: 5,
       name: 'Paul Carter',
       avatar: person5,
       feedback: [],
+      complete: true,
     },
   ],
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Title from '../../../common/Title'
+import Title from '../common/Title'
 import './MultipleChoice.css'
 
 class MultipleChoice extends Component {

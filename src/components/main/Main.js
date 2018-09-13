@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
-import Home from '../share-feedback/home/Home'
-import MultipleChoice from '../share-feedback/questions/multiple-choice/MultipleChoice'
+import Home from '../home/Home'
+import MultipleChoice from '../questions/MultipleChoice'
 import './Main.css'
 
 class Main extends Component {
@@ -10,7 +10,7 @@ class Main extends Component {
     return (
       <main>
         <Route path="/home" component={Home} />
-        <Route path="/feedback" component={MultipleChoice} />
+        <Route path="/multiple-choice" component={MultipleChoice} />
       </main>
     )
   }

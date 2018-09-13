@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
-import Title from '../../common/Title'
+import Title from '../common/Title'
 import person1 from './person1.png'
 import person2 from './person2.png'
 import person3 from './person3.png'
@@ -12,14 +13,16 @@ import './Home.css'
 class Home extends Component {
   render() {
     return (
-      <div className="share-feedback-home">
+      <div className="feedback-home">
         <Title>Share Feedback</Title>
         <ul className="people-list">
           <li>
             <img alt="person1.png" src={person1} />
             <span className="person-name">Chris Johnson</span>
             <div className="btn-wrapper">
-              <button className="fill-out-btn">Fill Out</button>
+              <button className="fill-out-btn">
+                <Link to="/multiple-choice">Fill Out</Link>
+              </button>
             </div>
           </li>
           <li>

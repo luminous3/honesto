@@ -23,12 +23,9 @@ const QuestionContainer = ({ children }) => {
   )
 }
 
-const mapStateToProps = (state, props) => {
-  const { userId, questionId } = props
-  return {
-    userId,
-    questionId,
-  }
+const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps)
+  console.log(state)
 }
 
-export default connect(mapStateToProps, null)(QuestionContainer)
+export default connect(mapStateToProps)(QuestionContainer)

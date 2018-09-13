@@ -1,31 +1,43 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
+import { updateFeedback } from '../../state/actions'
 import Title from '../common/Title'
 import QuestionContainer from './QuestionContainer'
 import './Multiple.css'
 
 class Multiple extends Component {
+  displayOptions = options => {
+    return options.map((option, index) => (
+      <li onClick={() => this.props.update(option)} key={`option${index}`}>
+        <p>{option}</p>
+      </li>
+    ))
+  }
+
   render() {
+    const { question } = this.props
     return (
       <div className="multiple-choice">
-        <Title>Is this person up to date with the latest accounting regulations?</Title>
-        <QuestionContainer>
-          <li>
-            <span className="multi-low">No</span>
-            <p>You should work on trying to stay more up to date with regulations.</p>
-          </li>
-          <li>
-            <span className="multi-medium">Somewhat</span>
-            <p>You are reasonably up to date with new regulations.</p>
-          </li>
-          <li>
-            <span className="multi-high">Yes</span>
-            <p>Yes, you are the one I look up to when I need information about new regulations.</p>
-          </li>
-        </QuestionContainer>
+        <Title>{question.value}</Title>
+        <QuestionContainer>{this.displayOptions(question.options)}</QuestionContainer>
       </div>
     )
   }
 }
 
-export default Multiple
+const mapDispatchToProps = (dispatch, props) => {
+  const { user, question } = props
+  return {
+    update: feedback =>
+      dispatch(
+        updateFeedback(user.id, {
+          q_id: question.id,
+          type: 'multiple',
+          data: feedback,
+        }),
+      ),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Multiple)

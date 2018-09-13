@@ -31,7 +31,7 @@ header {
 .header-menu li:hover {
   border-bottom: 3px solid #ab61e5;
   padding-bottom: 1.5rem;
-  height: 22px;
+  height: 20px;
   cursor: pointer;
 }
 

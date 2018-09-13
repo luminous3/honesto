@@ -74,6 +74,7 @@ const mapDispatchToProps = (dispatch, props) => {
       dispatch(
         updateFeedback(user.id, {
           q_id: question.id,
+          type: 'scale',
           data: feedback,
         }),
       ),

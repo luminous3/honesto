@@ -1,0 +1,17 @@
+.scale ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+}
+
+.scale li {
+  width: 74px;
+  height: 74px;
+  background-color: #f2f3f4;
+  margin-right: 0.3rem;
+}
+
+.scale-list .filled {
+  background-color: #ab61e5;
+  border: 0px;
+}

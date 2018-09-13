@@ -3,13 +3,14 @@
   flex-direction: column;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   padding: 2rem 1rem;
+  max-width: 780px;
 }
 
 .question-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .question-nav .btn-wrapper {

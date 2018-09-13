@@ -1,16 +1,61 @@
 import React, { Component } from 'react'
+import times from 'lodash/times'
 
 import Title from '../common/Title'
 import QuestionContainer from './QuestionContainer'
-import './Text.css'
+import './Scale.css'
+
+const MAX = 10
 
 class Scale extends Component {
-  render() {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      current: 0,
+      value: 0,
+    }
+  }
+
+  onHover = index => {
+    this.setState({
+      current: index,
+    })
+  }
+
+  reset = () => {
+    this.setState({
+      current: this.state.value,
+    })
+  }
+
+  unit = ({ filled, index }) => {
+    const { value, current } = this.state
     return (
-      <div className="text">
-        <Title>How well does this person understand our business goals and roadmap?</Title>
+      <li
+        key={'scale' + index}
+        onMouseOver={() => this.onHover(index)}
+        onMouseLeave={() => this.reset()}
+        onClick={() => this.setState({ value: index })}
+        className={filled ? 'filled' : ''}
+      />
+    )
+  }
+
+  displayUnits = () => {
+    return times(MAX, index => this.unit({ filled: index <= this.state.current ? true : false, index }))
+  }
+
+  render() {
+    const { current } = this.state
+    const { user, question } = this.props
+
+    return (
+      <div className="scale">
+        <Title>{question.value}</Title>
         <QuestionContainer>
-          <textarea placeholder="Say something" />
+          <p className="scale-content">{question.content}</p>
+          <ul className="scale-list">{this.displayUnits()}</ul>
         </QuestionContainer>
       </div>
     )

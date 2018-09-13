@@ -18,7 +18,7 @@ const PeopleList = ({ home, people }) => {
             {home &&
               !person.complete && (
                 <FillButton>
-                  <Link to={`/questions/${person.id}/2`}>Fill Out</Link>
+                  <Link to={`/questions/${person.id}/1`}>Fill Out</Link>
                 </FillButton>
               )}
           </li>

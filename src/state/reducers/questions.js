@@ -6,6 +6,8 @@ const initialState = {
     {
       id: 1,
       value: 'How much do you trust this person to deliver high quality work?',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a euismod dolor, non blandit nisl. Sed euismod enim in semper consectetur. Duis elementum venenatis finibus. Sed quis neque diam. Aliquam nec blandit mi, et cursus dolor. Duis pharetra purus nunc, in facilisis ex auctor id. ',
       type: 'scale',
       skip: false,
     },
@@ -23,6 +25,8 @@ const initialState = {
     {
       id: 3,
       value: 'How well does this person understand the technical domain of our product?',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a euismod dolor, non blandit nisl. Sed euismod enim in semper consectetur. Duis elementum venenatis finibus. Sed quis neque diam. Aliquam nec blandit mi, et cursus dolor. Duis pharetra purus nunc, in facilisis ex auctor id. ',
       type: 'scale',
       skip: false,
     },
@@ -65,6 +69,8 @@ const initialState = {
     {
       id: 8,
       value: 'How well does this person understand our business goals and roadmap?',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a euismod dolor, non blandit nisl. Sed euismod enim in semper consectetur. Duis elementum venenatis finibus. Sed quis neque diam. Aliquam nec blandit mi, et cursus dolor. Duis pharetra purus nunc, in facilisis ex auctor id. ',
       type: 'scale',
       skip: false,
     },

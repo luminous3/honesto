@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Text from './Text'
 import Multiple from './Multiple'
+import Scale from './Scale'
 
 import './QuestionList.css'
 
@@ -12,6 +13,8 @@ const QuestionList = ({ current, user }) => {
       return <Text question={current} user={user} />
     case 'multiple':
       return <Multiple question={current} user={user} />
+    case 'scale':
+      return <Scale question={current} user={user} />
     default:
       return <div>Question Coming Soon</div>
   }

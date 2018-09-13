@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './App.css'
 
 import Header from './components/header/Header'
@@ -8,11 +8,11 @@ import Main from './components/main/Main'
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <Fragment>
         <Header />
         <Main />
         <Footer />
-      </div>
+      </Fragment>
     )
   }
 }

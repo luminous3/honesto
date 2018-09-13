@@ -1,4 +1,4 @@
-import { UPDATE_FEEDBACK, UPDATE_CURRENT } from '../actions'
+import { UPDATE_FEEDBACK } from '../actions'
 
 import person1 from './images/person1.png'
 import person2 from './images/person2.png'
@@ -7,7 +7,6 @@ import person4 from './images/person4.png'
 import person5 from './images/person5.png'
 
 const initialState = {
-  current: 0,
   list: [
     {
       id: 1,
@@ -49,14 +48,20 @@ const initialState = {
 
 const people = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_CURRENT:
-      return { ...state, current: action.payload.id }
     case UPDATE_FEEDBACK:
-      let person = Object.assign({}, state.people[state.current])
-      person.feedback = action.payload
-      return state.map(
-        person => (person.id === action.payload.id ? { ...person, feeedback: action.payload.feedback } : person),
-      )
+      return {
+        ...state,
+        list: state.list.map(person => {
+          if (person.id === action.payload.id) {
+            if (person.feedback.length) {
+              return { ...person, feedback: person.feedback.push(action.payload.feedback) }
+            } else {
+              return { ...person, feedback: action.payload.feedback }
+            }
+          }
+          return person
+        }),
+      }
     default:
       return state
   }

@@ -14,9 +14,9 @@ class Main extends Component {
     return (
       <main>
         <Route path="/home" component={Home} />
-        <Route path="/text" component={Text} />
-        <Route path="/feedback" component={Report} />
-        <Route path="/multiple-choice" component={Multiple} />
+        <Route path="/text/:userId/:questionId" component={Text} />
+        <Route path="/feedback/:userId" component={Report} />
+        <Route path="/multiple-choice/:userId/:questionId" component={Multiple} />
         <Route path="/questions/:userId/:questionId" component={QuestionList} />
       </main>
     )

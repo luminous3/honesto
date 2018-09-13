@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import times from 'lodash/times'
+import { connect } from 'react-redux'
 
+import { updateFeedback } from '../../state/actions'
 import Title from '../common/Title'
 import QuestionContainer from './QuestionContainer'
 import './Scale.css'
@@ -29,14 +31,18 @@ class Scale extends Component {
     })
   }
 
+  save = index => {
+    this.setState({ value: index })
+    this.props.update(index)
+  }
+
   unit = ({ filled, index }) => {
-    const { value, current } = this.state
     return (
       <li
         key={'scale' + index}
         onMouseOver={() => this.onHover(index)}
         onMouseLeave={() => this.reset()}
-        onClick={() => this.setState({ value: index })}
+        onClick={() => this.save(index)}
         className={filled ? 'filled' : ''}
       />
     )
@@ -47,8 +53,7 @@ class Scale extends Component {
   }
 
   render() {
-    const { current } = this.state
-    const { user, question } = this.props
+    const { question } = this.props
 
     return (
       <div className="scale">
@@ -62,4 +67,17 @@ class Scale extends Component {
   }
 }
 
-export default Scale
+const mapDispatchToProps = (dispatch, props) => {
+  const { user, question } = props
+  return {
+    update: feedback =>
+      dispatch(
+        updateFeedback(user.id, {
+          q_id: question.id,
+          data: feedback,
+        }),
+      ),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Scale)

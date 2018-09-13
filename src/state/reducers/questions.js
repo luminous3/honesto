@@ -1,7 +1,7 @@
-import { INCREASE, DECREASE } from '../actions'
+// import { INCREASE, DECREASE } from '../actions'
 
 const initialState = {
-  current: 0,
+  // current: 0,
   list: [
     {
       id: 1,
@@ -85,12 +85,12 @@ const initialState = {
 
 const questions = (state = initialState, action) => {
   switch (action.type) {
-    case INCREASE:
-      let newCurrent = state.current === state.questions.length - 1 ? 0 : state.current + 1
-      return { ...state, current: newCurrent }
-    case DECREASE:
-      newCurrent = state.current === 0 ? state.current : state.current - 1
-      return { ...state, current: newCurrent }
+    // case INCREASE:
+    //   let newCurrent = state.current === state.questions.length - 1 ? 0 : state.current + 1
+    //   return { ...state, current: newCurrent }
+    // case DECREASE:
+    //   newCurrent = state.current === 0 ? state.current : state.current - 1
+    //   return { ...state, current: newCurrent }
     default:
       return state
   }

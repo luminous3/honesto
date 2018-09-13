@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { updateCurrent } from '../../../state/actions'
 import { Button, FillButton } from '../Button'
 import './PeopleList.css'
 
 const PeopleList = ({ home, people }) => {
+  console.log(people)
   return (
     <div>
       <ul className="people-list">
@@ -32,8 +32,4 @@ const mapStateToProps = state => ({
   people: state.people.list,
 })
 
-const mapDispatchToProps = dispatch => ({
-  updateCurrent: id => dispatch(updateCurrent(id)),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(PeopleList)
+export default connect(mapStateToProps, null)(PeopleList)

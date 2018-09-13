@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { updateFeedback } from '../../state/actions'
 
 import { Button } from '../common/Button'
 
 import './QuestionContainer.css'
 
-export default ({ children }) => {
+const QuestionContainer = ({ children }) => {
   return (
     <div className="question-wrapper">
       {children}
@@ -20,3 +22,13 @@ export default ({ children }) => {
     </div>
   )
 }
+
+const mapStateToProps = (state, props) => {
+  const { userId, questionId } = props
+  return {
+    userId,
+    questionId,
+  }
+}
+
+export default connect(mapStateToProps, null)(QuestionContainer)

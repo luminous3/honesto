@@ -15,13 +15,13 @@ class QuestionContainer extends Component {
     this.questionId = parseInt(questionId, 10)
     this.userId = parseInt(userId, 10)
 
-    this.nextUrl = parseInt(questionId, 10) + 1 > length ? '/home' : `/questions/${userId}/${this.questionId + 1}`
+    this.nextUrl =
+      parseInt(questionId, 10) + 1 > length ? `/report/${userId}` : `/questions/${userId}/${this.questionId + 1}`
     this.prevUrl = parseInt(questionId, 10) - 1 <= 0 ? '/home' : `/questions/${userId}/${this.questionId - 1}`
   }
 
   canContinue = () => {
     const person = this.props.people.find(p => p.id === this.userId)
-    console.log(person.feedback)
     const feedback = person.feedback.find(f => f.id === this.questionId)
     return feedback
   }

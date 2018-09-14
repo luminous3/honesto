@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import Title from '../common/Title'
-import PeopleList from '../common/People/PeopleList'
+import PeopleList from './PeopleList'
 
 import './Home.css'
 
@@ -11,7 +11,7 @@ class Home extends Component {
       <div className="feedback-home">
         <Title>Share Feedback</Title>
         <div className="home-content">
-          <PeopleList home />
+          <PeopleList />
         </div>
       </div>
     )

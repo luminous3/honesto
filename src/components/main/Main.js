@@ -11,8 +11,9 @@ class Main extends Component {
   render() {
     return (
       <main>
+        <Route exact path="/" component={Home} />
         <Route path="/home" component={Home} />
-        <Route path="/report/:userId" component={Report} />
+        <Route path="/reports/:userId" component={Report} />
         <Route path="/questions/:userId/:questionId" component={QuestionList} />
       </main>
     )

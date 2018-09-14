@@ -75,6 +75,10 @@ header {
   border-left: 1px solid #d9dcde;
 }
 
+.login-wrapper :active {
+  outline: 3px solid red;
+}
+
 .login-wrapper img {
   padding: 0.5rem 1.5rem;
   cursor: pointer;

@@ -8,11 +8,11 @@ import './Text.css'
 
 class Text extends Component {
   render() {
-    const { question, user } = this.props
+    const { question } = this.props
     return (
       <div className="text">
         <Title>{question.value}</Title>
-        <QuestionContainer page={question.id} user={user.id}>
+        <QuestionContainer>
           <textarea onChange={e => this.props.update(e.target.value)} placeholder="Say something" />
         </QuestionContainer>
       </div>
@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch, props) => {
     update: feedback =>
       dispatch(
         updateFeedback(user.id, {
-          q_id: question.id,
+          id: question.id,
           type: 'text',
           data: feedback,
         }),

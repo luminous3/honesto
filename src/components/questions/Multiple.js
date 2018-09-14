@@ -36,13 +36,11 @@ class Multiple extends Component {
   }
 
   render() {
-    const { question, user } = this.props
+    const { question } = this.props
     return (
       <div className="multiple-choice">
         <Title>{question.value}</Title>
-        <QuestionContainer page={question.id} user={user.id}>
-          {this.displayOptions(question.options)}
-        </QuestionContainer>
+        <QuestionContainer>{this.displayOptions(question.options)}</QuestionContainer>
       </div>
     )
   }
@@ -54,7 +52,7 @@ const mapDispatchToProps = (dispatch, props) => {
     update: feedback =>
       dispatch(
         updateFeedback(user.id, {
-          q_id: question.id,
+          id: question.id,
           type: 'multiple',
           data: feedback,
         }),

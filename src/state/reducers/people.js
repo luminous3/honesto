@@ -52,13 +52,27 @@ const people = (state = initialState, action) => {
       return {
         ...state,
         list: state.list.map(person => {
+          // person matches
           if (person.id === action.payload.id) {
+            // feedback exists for some (all questions)
             if (person.feedback.length) {
-              return { ...person, feedback: person.feedback.push(action.payload.feedback) }
+              const feedback = person.feedback.find(q => q.id === action.payload.feedback.id)
+              if (feedback) {
+                const newFeedback = person.feedback.map(f => {
+                  if (f.id === action.payload.feedback.id) {
+                    return action.payload.feedback
+                  }
+                  return f
+                })
+                return { ...person, feedback: newFeedback }
+              }
             } else {
-              return { ...person, feedback: action.payload.feedback }
+              // no feedback exists at all
+              return { ...person, feedback: [action.payload.feedback] }
             }
           }
+
+          // person didn't match
           return person
         }),
       }

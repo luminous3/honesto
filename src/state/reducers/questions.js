@@ -43,9 +43,9 @@ const initialState = {
       type: 'multiple',
       skip: false,
       options: [
-        'Not always - you should work on this aspect',
-        'Yes, you go out of our way to help our users and improve their experience',
-        'Yes, your understanding of our users and the empathy you demonstrate is second to none',
+        'Not always - you should work on this aspect.',
+        'Yes, you go out of our way to help our users and improve their experience.',
+        'Yes, your understanding of our users and the empathy you demonstrate is second to none.',
       ],
     },
     {
@@ -61,7 +61,7 @@ const initialState = {
       type: 'multiple',
       skip: false,
       options: [
-        'I frequently not know what you are working on, please work with me to raise visibility',
+        'I frequently not know what you are working on, please work with me to raise visibility.',
         'I almost always know what you are working on, but not always the details or next steps, only the outcomes you are after.',
         'Your plans are clear and readily available to those around you, and I always know what the next step is.',
       ],

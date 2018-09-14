@@ -1,18 +1,22 @@
 import React from 'react'
 import './Button.css'
 
-export const Button = ({ children, fill }) => {
+export const Button = ({ children, fill, onClick }) => {
   return (
     <div className="btn-wrapper">
-      <button className="view-btn">{children}</button>
+      <button onClick={onClick} className="view-btn">
+        {children}
+      </button>
     </div>
   )
 }
 
-export const FillButton = ({ children }) => {
+export const FillButton = ({ children, onClick }) => {
   return (
     <div className="btn-wrapper">
-      <button className="fill-out-btn">{children}</button>
+      <button onClick={onClick} className="fill-out-btn">
+        {children}
+      </button>
     </div>
   )
 }

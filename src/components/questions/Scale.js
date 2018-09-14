@@ -53,12 +53,12 @@ class Scale extends Component {
   }
 
   render() {
-    const { question, user } = this.props
+    const { question } = this.props
 
     return (
       <div className="scale">
         <Title>{question.value}</Title>
-        <QuestionContainer page={question.id} user={user.id}>
+        <QuestionContainer>
           <p className="scale-content">{question.content}</p>
           <ul className="measures">
             <li>Not At All</li>
@@ -77,7 +77,7 @@ const mapDispatchToProps = (dispatch, props) => {
     update: feedback =>
       dispatch(
         updateFeedback(user.id, {
-          q_id: question.id,
+          id: question.id,
           type: 'scale',
           data: feedback,
         }),

@@ -18,4 +18,4 @@ If given a week instead of 2 days, this is what I would have done differently:
 
 ## End Result vs Initial Plan
 
-Overall, the end result came pretty close that what I thought would be able to achieve in 2 days, and what we had discussed in the original design meeting. The only feature that I originally had planned to do but didn't get time to was the loading animations. The mocks and the design is clean and modern and that made development a lot easier, and fun. 
+Overall, the end result came pretty close that what I thought would be able to achieve in 2 days, and what we had discussed in the original design meeting. The only feature that I originally had planned to do but didn't get time to was the loading animations. The mocks and the design is clean and modern and that made development a lot easier and fun :)

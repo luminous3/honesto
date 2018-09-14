@@ -9,6 +9,10 @@ class QuestionContainer extends Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      cannotSkip: false,
+    }
+
     const { questionId, userId } = this.props.match.params
     const { length } = this.props
 
@@ -33,10 +37,18 @@ class QuestionContainer extends Component {
   onNext = () => {
     if (this.canContinue()) {
       this.props.history.push(this.nextUrl)
+      this.setState({
+        cannotSkip: false,
+      })
+    } else {
+      this.setState({
+        cannotSkip: true,
+      })
     }
   }
 
   render() {
+    const { cannotSkip } = this.state
     const { children } = this.props
     const skip = this.props.questions.find(q => q.id === this.questionId).skip
 
@@ -45,6 +57,7 @@ class QuestionContainer extends Component {
         {children}
         <nav className="question-nav">
           <Button onClick={this.onPrev}>Previous</Button>
+          <div className="skip-warning">{cannotSkip && 'Please enter feedback'}</div>
           {skip && <Button onClick={() => this.onNext()}>Skip</Button>}
           <Button onClick={this.onNext} fill>
             Next

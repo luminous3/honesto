@@ -45,7 +45,7 @@ class QuestionContainer extends Component {
         {children}
         <nav className="question-nav">
           <Button onClick={this.onPrev}>Previous</Button>
-          {skip && <Button onClick={() => this.onPrev()}>Skip</Button>}
+          {skip && <Button onClick={() => this.onNext()}>Skip</Button>}
           <Button onClick={this.onNext} fill>
             Next
           </Button>

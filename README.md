@@ -2,7 +2,7 @@
 
 Application for internal company feedback.
 
-# Future Improvements
+## Future Improvements
 
 If given a week instead of 2 days, this is what I would have done differently:
 
@@ -16,6 +16,6 @@ If given a week instead of 2 days, this is what I would have done differently:
 8. Use styled components instead of vanilla.js
 9. Refactor the QuestionContainer so that there's less boilerplate for the questions.
 
-# End Result vs Initial Plan
+## End Result vs Initial Plan
 
-Overall, the end result came pretty close that what I thought would be able to achieve in 2 days, and what we had discussed in the original design meeting. The only feature that I originally had planned to do but didn't get time to was the loading animations.
+Overall, the end result came pretty close that what I thought would be able to achieve in 2 days, and what we had discussed in the original design meeting. The only feature that I originally had planned to do but didn't get time to was the loading animations. The mocks and the design is clean and modern and that made development a lot easier, and fun. 

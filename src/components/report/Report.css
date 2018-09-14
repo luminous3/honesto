@@ -1,10 +1,31 @@
+.report {
+  max-width: 780px;
+}
+
 .report-content {
   display: flex;
+  flex-direction: column;
   width: 1180px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
 .report-content li {
   list-style: none;
-  border-left: 1px solid rgba(172, 177, 182, 0.33);
+  font-style: Helvetica;
+  font-size: 20px;
+  margin: 2rem 1rem;
+}
+
+.report .response {
+  display: flex;
+  flex-direction: row;
+}
+
+.report .answer {
+  color: #ab61e5;
+  width: 200px;
+  margin-left: 2rem;
+}
+
+.report .question {
+  width: 480px;
 }

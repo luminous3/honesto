@@ -18,7 +18,7 @@ class Header extends Component {
             <Link to="/home">Share Feedback </Link>
           </li>
           <li>
-            <Link to="/feedback">My Feedback </Link>
+            <Link to="/home">My Feedback </Link>
           </li>
           <li>
             <Link to="/home">Team Feedback </Link>

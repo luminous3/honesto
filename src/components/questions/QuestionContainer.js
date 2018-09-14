@@ -10,24 +10,19 @@ class QuestionContainer extends Component {
     super(props)
 
     const { questionId, userId } = this.props.match.params
-    const { length, questions } = this.props
+    const { length } = this.props
 
-    this.state = {
-      prevUrl: questionId - 1 <= 0 ? '/home' : `/questions/${userId}/${questionId - 1}`,
-      nextUrl: questionId + 1 > length ? '/home' : `/questions/${userId}/${questionId + 1}`,
-      skip: questions[questionId].skip,
-      canContinue: true,
-    }
-    this.prevUrl = questionId - 1 <= 0 ? '/home' : `/questions/${userId}/${questionId - 1}`
     this.questionId = parseInt(questionId, 10)
     this.userId = parseInt(userId, 10)
+
+    this.nextUrl = parseInt(questionId, 10) + 1 > length ? '/home' : `/questions/${userId}/${this.questionId + 1}`
+    this.prevUrl = parseInt(questionId, 10) - 1 <= 0 ? '/home' : `/questions/${userId}/${this.questionId - 1}`
   }
 
   canContinue = () => {
     const person = this.props.people.find(p => p.id === this.userId)
-    console.log(person)
+    console.log(person.feedback)
     const feedback = person.feedback.find(f => f.id === this.questionId)
-    console.log(feedback)
     return feedback
   }
 
@@ -43,7 +38,7 @@ class QuestionContainer extends Component {
 
   render() {
     const { children } = this.props
-    const { skip } = this.state
+    const skip = this.props.questions.find(q => q.id === this.questionId).skip
 
     return (
       <div className="question-wrapper">

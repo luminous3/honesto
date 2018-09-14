@@ -57,6 +57,7 @@ const people = (state = initialState, action) => {
             // feedback exists for some (all questions)
             if (person.feedback.length) {
               const feedback = person.feedback.find(q => q.id === action.payload.feedback.id)
+              // existing question
               if (feedback) {
                 const newFeedback = person.feedback.map(f => {
                   if (f.id === action.payload.feedback.id) {
@@ -66,6 +67,10 @@ const people = (state = initialState, action) => {
                 })
                 return { ...person, feedback: newFeedback }
               }
+              //new question
+              const feedbackCopy = Object.assign([], person.feedback)
+              feedbackCopy.push(action.payload.feedback)
+              return { ...person, feedback: feedbackCopy }
             } else {
               // no feedback exists at all
               return { ...person, feedback: [action.payload.feedback] }

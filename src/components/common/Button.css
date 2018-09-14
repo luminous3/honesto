@@ -11,6 +11,16 @@
   background-color: #f2f3f4;
 }
 
+.next-btn {
+  background-color: #acb1b6;
+  color: white;
+}
+
+.next-btn:hover {
+  background-color: #f2f3f4;
+  color: #031323;
+}
+
 .btn-wrapper {
   width: 500px;
   display: flex;

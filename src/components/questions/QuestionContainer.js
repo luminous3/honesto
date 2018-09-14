@@ -59,7 +59,7 @@ class QuestionContainer extends Component {
           <Button onClick={this.onPrev}>Previous</Button>
           <div className="skip-warning">{cannotSkip && 'Please enter feedback'}</div>
           {skip && <Button onClick={() => this.onNext()}>Skip</Button>}
-          <Button onClick={this.onNext} fill>
+          <Button className="next-btn" onClick={this.onNext} fill>
             Next
           </Button>
         </nav>

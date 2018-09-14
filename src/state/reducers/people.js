@@ -1,4 +1,4 @@
-import { UPDATE_FEEDBACK } from '../actions'
+import { UPDATE_FEEDBACK, CLEAR_FEEDBACK } from '../actions'
 
 import person1 from './images/person1.png'
 import person2 from './images/person2.png'
@@ -79,6 +79,13 @@ const people = (state = initialState, action) => {
 
           // person didn't match
           return person
+        }),
+      }
+    case CLEAR_FEEDBACK:
+      return {
+        ...state,
+        list: state.list.map(person => {
+          return { ...person, feedback: [] }
         }),
       }
     default:

@@ -1,12 +1,5 @@
-// export const UPDATE_CURRENT = 'UPDATE_CURRENT'
 export const UPDATE_FEEDBACK = 'UPDATE_FEEDBACK'
-// export const INCREASE = 'INCREASE'
-// export const DECREASE = 'DECREASE'
+export const CLEAR_FEEDBACK = 'CLEAR_FEEDBACK'
 
-// questions
-// export const next = () => ({ type: INCREASE })
-// export const previous = () => ({ type: DECREASE })
-
-// people
 export const updateFeedback = (id, feedback) => ({ type: UPDATE_FEEDBACK, payload: { id, feedback } })
-// export const updateCurrent = id => ({ type: UPDATE_CURRENT, id })
+export const clearFeedback = () => ({ type: CLEAR_FEEDBACK })

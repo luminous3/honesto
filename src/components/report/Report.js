@@ -8,8 +8,7 @@ import './Report.css'
 
 const Report = ({ user, questions }) => {
   const { feedback } = user
-  console.log(user.feedback)
-  console.log(user)
+
   return (
     <div className="report">
       <Title>Feedback for {user.name}</Title>

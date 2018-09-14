@@ -37,4 +37,4 @@ const mapStateToProps = state => ({
   people: state.people.list,
 })
 
-export default connect(mapStateToProps, null)(PeopleList)
+export default connect(mapStateToProps)(PeopleList)

@@ -60,6 +60,10 @@ class Scale extends Component {
         <Title>{question.value}</Title>
         <QuestionContainer page={question.id} user={user.id}>
           <p className="scale-content">{question.content}</p>
+          <ul className="measures">
+            <li>Not At All</li>
+            <li>Very Much</li>
+          </ul>
           <ul className="scale-list">{this.displayUnits()}</ul>
         </QuestionContainer>
       </div>

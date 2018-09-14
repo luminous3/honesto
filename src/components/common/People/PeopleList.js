@@ -6,7 +6,6 @@ import { Button, FillButton } from '../Button'
 import './PeopleList.css'
 
 const PeopleList = ({ home, people }) => {
-  console.log(people)
   return (
     <div>
       <ul className="people-list">

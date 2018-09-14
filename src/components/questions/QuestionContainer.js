@@ -68,7 +68,7 @@ class QuestionContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
     length: state.questions.list.length,
     questions: state.questions.list,

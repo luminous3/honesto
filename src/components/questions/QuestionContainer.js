@@ -9,24 +9,27 @@ class QuestionContainer extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      cannotSkip: false,
-    }
-
     const { questionId, userId } = this.props.match.params
     const { length } = this.props
-
     this.questionId = parseInt(questionId, 10)
     this.userId = parseInt(userId, 10)
 
+    this.state = {
+      cannotContinue: false,
+      skip: props.questions.find(q => q.id === this.questionId).skip,
+    }
+
     this.nextUrl =
-      parseInt(questionId, 10) + 1 > length ? `/report/${userId}` : `/questions/${userId}/${this.questionId + 1}`
+      parseInt(questionId, 10) + 1 > length ? `/reports/${userId}` : `/questions/${userId}/${this.questionId + 1}`
     this.prevUrl = parseInt(questionId, 10) - 1 <= 0 ? '/home' : `/questions/${userId}/${this.questionId - 1}`
   }
 
   canContinue = () => {
     const person = this.props.people.find(p => p.id === this.userId)
     const feedback = person.feedback.find(f => f.id === this.questionId)
+    if (feedback && feedback.type === 'text' && feedback.data === '') {
+      return false
+    }
     return feedback
   }
 
@@ -35,29 +38,28 @@ class QuestionContainer extends Component {
   }
 
   onNext = () => {
-    if (this.canContinue()) {
+    if (this.canContinue() || this.state.skip) {
       this.props.history.push(this.nextUrl)
       this.setState({
-        cannotSkip: false,
+        cannotContinue: false,
       })
     } else {
       this.setState({
-        cannotSkip: true,
+        cannotContinue: true,
       })
     }
   }
 
   render() {
-    const { cannotSkip } = this.state
+    const { cannotContinue, skip } = this.state
     const { children } = this.props
-    const skip = this.props.questions.find(q => q.id === this.questionId).skip
 
     return (
       <div className="question-wrapper">
         {children}
         <nav className="question-nav">
           <Button onClick={this.onPrev}>Previous</Button>
-          <div className="skip-warning">{cannotSkip && 'Please enter feedback'}</div>
+          {cannotContinue && !skip && <div className="skip-warning">Please enter feedback</div>}
           {skip && <Button onClick={() => this.onNext()}>Skip</Button>}
           <Button className="next-btn" onClick={this.onNext} fill>
             Next

@@ -10,8 +10,14 @@ class Multiple extends Component {
   constructor(props) {
     super(props)
 
+    const feedback = props.user.feedback.find(f => f.id === props.question.id)
+    let option = null
+    if (feedback) {
+      option = feedback.data.index
+    }
+
     this.state = {
-      selected: null,
+      selected: option,
     }
   }
 
@@ -20,7 +26,7 @@ class Multiple extends Component {
       selected: index,
     })
 
-    this.props.update(option)
+    this.props.update({ index, option })
   }
 
   displayOptions = options => {

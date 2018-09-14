@@ -15,8 +15,8 @@ class Scale extends Component {
 
     const feedback = props.user.feedback.find(f => f.id === props.question.id)
     this.state = {
-      current: feedback.data || 0,
-      value: feedback.data || 0,
+      current: (feedback ? feedback.data : 0) || 0,
+      value: (feedback ? feedback.data : 0) || 0,
     }
   }
 

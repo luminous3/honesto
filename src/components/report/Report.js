@@ -8,7 +8,6 @@ import './Report.css'
 
 const Report = ({ user, questions }) => {
   const { feedback } = user
-
   return (
     <div className="report">
       <Title>Feedback for {user.name}</Title>
@@ -18,7 +17,7 @@ const Report = ({ user, questions }) => {
           return (
             <li key={f.id} className="response">
               <div className="question">{question.value}</div>
-              <div className="answer">{f.data}</div>
+              <div className="answer">{f.type === 'multiple' ? f.data.option : f.data}</div>
             </li>
           )
         })}
